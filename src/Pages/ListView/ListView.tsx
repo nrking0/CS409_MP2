@@ -11,16 +11,6 @@ const ListView = ({data}: {data: Artwork[] | null}) => {
     const [sort, setSort] = useState("title");
     const [ascending, setAscending] = useState(true);
 
-    const filterData = (s: string, d: Artwork[]) => {
-        if (!d) return [];
-        let temp = d.filter(
-            (artwork) =>
-                artwork.title.toLowerCase().includes(s.toLowerCase()) ||
-                artwork.artist_display.toLowerCase().includes(s.toLowerCase())
-        );
-        return sortData(sort, temp, ascending);
-    };
-
     const sortData = (s: string, d: Artwork[], a: boolean) => {
         if (!d) return [];
         const sorted = d;
@@ -45,8 +35,18 @@ const ListView = ({data}: {data: Artwork[] | null}) => {
     };
 
     useEffect(() => {
+        const filterData = (s: string, d: Artwork[]) => {
+            if (!d) return [];
+            let temp = d.filter(
+                (artwork) =>
+                    artwork.title.toLowerCase().includes(s.toLowerCase()) ||
+                    artwork.artist_display.toLowerCase().includes(s.toLowerCase())
+            );
+            return sortData(sort, temp, ascending);
+        };
+
         setFilteredData(filterData(search, data || []));
-    }, [search, data]);
+    }, [search, data, ascending, sort]);
 
     const nav = useNavigate();
 
