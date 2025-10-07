@@ -1,0 +1,24 @@
+.artworkGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 90vw;
+    margin: auto;
+
+    .artwork {
+        &:hover {
+            transform: scale(1.05);
+        }
+        transition: transform 0.2s;
+    }
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: auto;
+    padding: 15px;
+}

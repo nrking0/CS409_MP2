@@ -141,4 +141,3 @@ git push origin main
   - Just make sure you do `git status` and `git log` first so we can see your last edits.
 9. Fill out and submit the form [here](https://forms.gle/E7qr5MbSnxFCLpaV7).
 
-
