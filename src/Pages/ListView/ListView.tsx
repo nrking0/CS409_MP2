@@ -65,6 +65,7 @@ const ListView = ({data}: {data: Artwork[] | null}) => {
             <div className={styles.sort}>
                 <p>Sort by:</p>
                 <select
+                    className={styles.sortSelect}
                     value={sort}
                     onChange={(e) => {
                         setSort(e.target.value);
@@ -75,6 +76,7 @@ const ListView = ({data}: {data: Artwork[] | null}) => {
                     <option value="artist">Artist</option>
                 </select>
                 <button
+                    className={styles.sortButton}
                     onClick={() => {
                         setAscending((a) => !a);
                         setFilteredData(sortData(sort, filteredData, !ascending));

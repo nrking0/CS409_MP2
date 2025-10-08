@@ -12,6 +12,31 @@
     .sort > *{
         margin: 5px;
     }
+
+    .searchInput {
+        border-radius: 5px;
+        border: .1px solid gray;
+        padding: 7px 10px;
+    }
+
+    .sortSelect {
+        border-radius: 5px;
+        border: 1px solid gray;
+    }
+
+    .sortButton {
+        border: none;
+        background-color: orange;
+        color: white;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: orangered;
+        }
+    }
 }
 
 

@@ -61,6 +61,7 @@ const Gallery = ({ data }: { data: Artwork[] | null }) => {
                     Filter by Place of Origin:{" "}
                 </label>
                 <select
+                    className={styles.filterSelect}
                     value={selectedOrigin}
                     onChange={(e) => setSelectedOrigin(e.target.value)}
                 >
@@ -76,6 +77,7 @@ const Gallery = ({ data }: { data: Artwork[] | null }) => {
                 </label>
                 <select
                     value={selectedCategory}
+                    className={styles.filterSelect}
                     onChange={(e) => setSelectedCategory(e.target.value)}
                 >
                     <option value="">All</option>
